@@ -83,6 +83,7 @@
 跟密碼的相關性在於有些密鑰的產生跟偽隨機變數產生器有關，比如說 SSL/TLS 的臨時生成的會話密鑰
 
 ## 參考資料
+主要參考以下內容:
 * [無趣的密碼學，有趣的加密！ 系列](https://ithelp.ithome.com.tw/users/20130205/ironman/3517)
 * [什麼是密碼學？ - AWS](https://aws.amazon.com/tw/what-is/cryptography/)
 * [密碼學基本概念](https://hackmd.io/@DIuvbu1vRU2C5FwWIMzZ_w/ByUf1sdRr)
