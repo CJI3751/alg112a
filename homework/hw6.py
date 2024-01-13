@@ -1,28 +1,28 @@
-import random
+def gradient_descent(f, start_point, learning_rate=0.01, max_iterations=1000, tolerance=1e-6, step=1e-4):
+    p = start_point.copy()
+    for iteration in range(max_iterations):
+        gradient = grad(f, p, step)
+        new_p = [p[i] - learning_rate * gradient[i] for i in range(len(p))]
 
-def neighbor(f, p, h):
-    dim = len(p)
-    p_new = p.copy()
-    i = random.randint(0, dim - 1)  # 随机选择一个维度
-    p_new[i] += random.choice([-h, h])  # 在该维度上增加或减少一个小的步长
-    return p_new, f(*p_new)  # 返回新的点和该点的函数值
+        if sum((new_p[i] - p[i])**2 for i in range(len(p))) < tolerance**2:
+            break
 
-def hillClimbing(f, p, h=0.01):
-    failCount = 0
-    fnow = f(*p)
-    while failCount < 10000:
-        p1, f1 = neighbor(f, p, h)
-        if f1 >= fnow:
-            p, fnow = p1, f1
-            print('p=', p, 'f(p)=', fnow)
-            failCount = 0
-        else:
-            failCount += 1
-    return p, fnow
+        p = new_p
 
-def f(x, y, z):
-    return -1 * (x**2 + y**2 + z**2)
+    return p, f(p)
 
-best_p, best_f = hillClimbing(f, [2, 1, 3])
-print("Best point:", best_p)
-print("Best value:", best_f)
+def df(f, p, k, step):
+    p1 = p.copy()
+    p1[k] += step
+    return (f(p1) - f(p)) / step
+
+def grad(f, p, step):
+    return [df(f, p, k, step) for k in range(len(p))]
+
+def example_function(p):
+    return sum(x**2 for x in p)
+
+start_point = [5, 5]
+min_point, min_value = gradient_descent(example_function, start_point)
+print("Minimum point:", min_point)
+print("Minimum value:", min_value)
