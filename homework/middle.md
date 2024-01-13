@@ -85,5 +85,5 @@
 ## 參考資料
 * [無趣的密碼學，有趣的加密！ 系列](https://ithelp.ithome.com.tw/users/20130205/ironman/3517)
 * [什麼是密碼學？ - AWS](https://aws.amazon.com/tw/what-is/cryptography/)
-* [密碼學基本概念](https://vocus.cc/article/61d6fd44fd8978000157e475](https://hackmd.io/@starPt/ByUf1sdRr#RSA)https://hackmd.io/@starPt/ByUf1sdRr#RSA)
+* [密碼學基本概念](https://hackmd.io/@DIuvbu1vRU2C5FwWIMzZ_w/ByUf1sdRr)
 * [維基百科](https://zh.wikipedia.org/zh-tw/%E5%AF%86%E7%A0%81%E5%AD%A6)
