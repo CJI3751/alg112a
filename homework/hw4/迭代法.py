@@ -1,7 +1,11 @@
-from numpy import arange
-f1 = lambda x: (x*x + 1) / 3
-f2 = lambda x: 3 - (1/x)
-f3 = lambda x: (x-3)*(x+1) + 4
+def f(x):
+    return x**2 - 3*x + 1
+
+def df(x):
+    return 2*x - 3
+f1 = lambda x: x - f(x)/df(x)
+f2 = lambda x: (x**2 + 1) / 3
+f3 = lambda x: (3*x - 1)**0.5
 
 x1 = x2 = x3 = 1
 
